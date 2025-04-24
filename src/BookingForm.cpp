@@ -3,7 +3,8 @@
 #include <iostream>
 #include <ctime>  // For getting current date
 
-BookingForm::BookingForm(sf::RenderWindow& win, DialogueManager* manager) :window(win), formManager(manager) {
+BookingForm::BookingForm(sf::RenderWindow& win, DialogueManager* manager) :window(win), formManager(manager)
+{
     fieldLabels = { "Name:", "ID:", "Address:", "Email:" };  // ✅ Add common fields
     userInput.resize(fieldLabels.size(), "");  // Initialize input fields
 }

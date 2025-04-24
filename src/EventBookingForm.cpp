@@ -4,7 +4,8 @@
 #include <ctime>  // For getting current date
 
 EventBookingForm::EventBookingForm(sf::RenderWindow& win, DialogueManager* manager)
-    : BookingForm(win, manager) {  // ✅ Calls base constructor
+    : BookingForm(win, manager) //  Calls base constructor
+{
     fieldLabels.insert(fieldLabels.end(), {
         "Event Name:", "Venue:", "Event Date:",
         "Number of Tickets:","Wheelchair Accessibility?", "Seating Preference:"

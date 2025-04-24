@@ -4,7 +4,8 @@
 #include <ctime>  // For getting current date
 
 CarRentalForm::CarRentalForm(sf::RenderWindow& win, DialogueManager* manager)
-    : BookingForm(win, manager) {  // ✅ Calls base constructor
+    : BookingForm(win, manager) // Calls base constructor
+{
     fieldLabels.insert(fieldLabels.end(), {
         "Pickup Location:",
         "Pickup Date:", "Rent total days:",
@@ -12,7 +13,7 @@ CarRentalForm::CarRentalForm(sf::RenderWindow& win, DialogueManager* manager)
         "Car Type:"
         });
 
-    userInput.resize(fieldLabels.size(), "");  // ✅ Resize input fields
+    userInput.resize(fieldLabels.size(), "");  // Resize input fields
     setDefaultValues();
 }
 

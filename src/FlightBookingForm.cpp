@@ -4,10 +4,11 @@
 #include <ctime>  // For getting current date
 
 FlightBookingForm::FlightBookingForm(sf::RenderWindow& win, DialogueManager* manager)
-    : BookingForm(win,manager) {  // ✅ Calls base constructor
-    fieldLabels.insert(fieldLabels.end(), { "Departure Airport:", "Arrival Airport:",
-                   "Departure Date:",
-                   "Preferred Time:" });
+    : BookingForm(win,manager) // Calls base constructor
+{  
+    fieldLabels.insert(fieldLabels.end(), { 
+        "Departure Airport:", "Arrival Airport:", "Departure Date:", "Preferred Time:" });
+
     userInput.resize(fieldLabels.size(), "");  // Resize to include all fields
     setDefaultValues();
 }

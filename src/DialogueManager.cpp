@@ -1,15 +1,19 @@
 ﻿#include "DialogueManager.h"
 
-DialogueManager::DialogueManager() : activeForm(nullptr), isFormOpen(false) {}
+DialogueManager::DialogueManager() 
+    : activeForm(nullptr), isFormOpen(false)
+{
+}
 
-void DialogueManager::setActiveForm(std::unique_ptr<BookingForm> form) {
+void DialogueManager::setActiveForm(std::unique_ptr<BookingForm> form) 
+{
     if (isFormOpen) return;  // Prevent multiple openings
     isFormOpen = true;
 
     activeForm = std::move(form);
     std::cout << "Opening " << activeForm->getFormType() << " form...\n";
 
-    if (!formWindow.isOpen()) {  // ✅ Fix: Prevent reopening if already open
+    if (!formWindow.isOpen()) {
 
         formWindow.create(sf::VideoMode(650, 700), activeForm->getFormType());
     }
